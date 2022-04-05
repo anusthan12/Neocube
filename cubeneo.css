@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.flex{
+    margin-top: -500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    background: #000;
+    overflow: hidden;
+    animation: col 18s linear infinite;
+
+}
+
+.player{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #000;
+    overflow: hidden;
+}
+
+
+
+@keyframes col {
+  to{
+      filter: hue-rotate(360deg);
+  }
+}
+
+
+.cube{
+    width: 200px;
+    height: 200px;
+    transform: rotateX(60deg) rotate(45deg);
+    transform-style: preserve-3d;
+    top: -100px;
+    animation: rot 8s linear infinite;
+}
+@keyframes rot {
+    0%{
+        transform: rotateX(60deg) rotate(45deg);
+    }
+    100%{
+       transform: rotateX(60deg) rotate(405deg);
+    }
+}
+.cube > div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: #fff;
+}
+
+#left{
+  left: 0px;
+  top: 0px;
+  transform-origin: left;
+  transform: rotateY(90deg);
+  background: linear-gradient(90deg,#222,#00e7ff);
+}
+
+#right{
+  left: 0px;
+  top: 0px;
+  transform-origin: right;
+  background: linear-gradient(-90deg,#222,#00e7ff);
+  transform: rotateY(-90deg);
+}
+
+#front{
+  right: 0px;
+  top: 0px;
+  transform-origin: top;
+  background: linear-gradient(180deg,#222,#00e7ff);
+  transform: rotateX(-90deg);
+}
+
+#back{
+  right: 0px;
+  bottom: 0px;
+  transform-origin: bottom;
+  background: linear-gradient(0deg,#222,#00e7ff);
+  transform: rotateX(90deg);
+}
+#top{
+ background: #222;
+}
+#bottom{
+ background: #00e7ff;
+ width: 175px;
+ height: 175px;
+ left: 12px;
+ top: 12px;
+ transform: translateZ(-220px);
+ filter: blur(5px);
+ box-shadow: 0 0 160px #00e7ffbf;
+}
+.txt{
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    min-height: 100vh;
+    background: #000;
+    padding-top: 30px;
+    animation: col 18s linear infinite;
+            
+    
+}
+@keyframes color {
+to{
+    filter: hue-rotate(360deg);
+}
+}
+h2{
+    position: relative;
+    font-size: 6em;
+    letter-spacing: 15px;
+    color:#222;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: top;
+    -webkit-box-reflect: below 1px liner gradient( transparent, #000) ;
+    line-height: 0.70em;
+    outline: none;
+    animation: neo 5s linear infinite;
+}
+@keyframes neo{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+        color:#000;
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+    }
+}
